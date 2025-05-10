@@ -27,7 +27,7 @@ This is a mobile-first frontend built with **Ionic + Angular** that interacts wi
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/payment-client.git
+git clone https://github.com/dfcu-app/payment-client.git
 cd payment-client
 
 # Install dependencies
