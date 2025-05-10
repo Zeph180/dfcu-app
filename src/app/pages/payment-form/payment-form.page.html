@@ -1,10 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>payment-form</ion-title>
+    <ion-title>Make payment</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div class="logo">
+    <img src="./assets/dfcu-logo.png" class="logo"/>
+  </div>
   <form [formGroup]="paymentForm" (ngSubmit)="submitForm()">
       <ion-input
         label="Account to Debit"
@@ -53,12 +56,16 @@
         placeholder="Enter your reference"
         formControlName="payerReference"></ion-input>
 
-    <ion-button expand="block" color="primary" type="submit" [disabled]="submitting || paymentForm.invalid">
-      {{ submitting ? 'Submitting...' : 'Submit Payment' }}
-    </ion-button>
+      <ion-button expand="block" color="primary" type="submit" [disabled]="submitting || paymentForm.invalid">
+        {{ submitting ? 'Submitting...' : 'Submit Payment' }}
+      </ion-button>
 
-    <div class="message" *ngIf="resultMessage">
-      {{ resultMessage }}
-    </div>
+      <ion-text class="link-text" (click)="goToStatusPage()">
+        <p>Check Payment Status</p>
+      </ion-text>
+
+      <div class="message" *ngIf="resultMessage">
+        {{ resultMessage }}
+      </div>
   </form>
 </ion-content>

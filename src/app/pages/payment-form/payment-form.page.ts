@@ -7,12 +7,13 @@ import {
   IonHeader,
   IonInput,
   IonItem,
-  IonLabel, IonSelect, IonSelectOption,
+  IonLabel, IonSelect, IonSelectOption, IonText,
   IonTitle,
   IonToolbar
 } from '@ionic/angular/standalone';
 import {PaymentService} from "../../services/payment.service";
 import {AlertController} from "@ionic/angular";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-payment-form',
@@ -33,6 +34,7 @@ import {AlertController} from "@ionic/angular";
     IonButton,
     IonSelect,
     IonSelectOption,
+    IonText,
   ],
 })
 export class PaymentFormPage implements OnInit {
@@ -43,7 +45,8 @@ export class PaymentFormPage implements OnInit {
   constructor(
     private fb: FormBuilder,
     private paymentService: PaymentService,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -93,5 +96,9 @@ export class PaymentFormPage implements OnInit {
       cssClass: 'dfcu-alert'
     });
     await alert.present();
+  }
+
+  goToStatusPage() {
+    this.router.navigate(['/check-status']);
   }
 }
