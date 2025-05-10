@@ -35,3 +35,88 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+ion-content {
+  --background: var(--dfcu-background);
+}
+
+.message {
+  margin-top: 1rem;
+  color: var(--dfcu-blue);
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  form {
+    max-width: 500px;
+    margin: auto;
+  }
+}
+
+ion-input,ion-select {
+  margin-top: 20px;
+}
+
+form {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.link-text {
+  //text-align: center;
+  color: var(--dfcu-blue);
+  font-weight: 500;
+  cursor: pointer;
+
+  p {
+    margin-top: 25px;
+    text-decoration: underline;
+    font-size: 14px;
+  }
+
+  ion-button {
+    background-color: var(--dfcu-blue);
+  }
+}
+
+
+
+ion-alert.dfcu-alert {
+  --background: var(--dfcu-white);
+  --header-color: var(--dfcu-blue);
+  --message-color: #333;
+  --button-color: var(--dfcu-light-blue);
+  --button-font-weight: 500;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+ion-alert.dfcu-alert .alert-head {
+  color: var(--dfcu-blue);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+ion-alert.dfcu-alert .alert-message {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+ion-alert.dfcu-alert .alert-button {
+  color: var(--dfcu-blue);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.logo {
+  margin-top: 15px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+

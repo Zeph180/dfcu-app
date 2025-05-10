@@ -1,32 +1,71 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>payment-form</ion-title>
+    <ion-title>Make payment</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div class="logo">
+    <img src="./assets/dfcu-logo.png" class="logo"/>
+  </div>
   <form [formGroup]="paymentForm" (ngSubmit)="submitForm()">
-    <ion-item>
-      <ion-label></ion-label>
-      <ion-input formControlName="accountNumber"></ion-input>
-    </ion-item>
+      <ion-input
+        label="Account to Debit"
+        mode="md"
+        label-placement="stacked"
+        fill="outline"
+        type="text"
+        placeholder="Enter your account number"
+        formControlName="payer"></ion-input>
 
-    <ion-item>
-      <ion-label position="floating">Amount</ion-label>
-      <ion-input type="number" formControlName="amount"></ion-input>
-    </ion-item>
+      <ion-input
+        label="Merchant Account"
+        mode="md"
+        label-placement="stacked"
+        fill="outline"
+        type="text"
+        placeholder="Enter merchant account number"
+        formControlName="payee"></ion-input>
 
-    <ion-item>
-      <ion-label position="floating">Reference</ion-label>
-      <ion-input formControlName="reference"></ion-input>
-    </ion-item>
+      <ion-input
+        label="Amount"
+        mode="md"
+        label-placement="stacked"
+        fill="outline"
+        placeholder="Enter your amount"
+        type="number" formControlName="amount"></ion-input>
 
-    <ion-button expand="block" color="primary" type="submit" [disabled]="submitting || paymentForm.invalid">
-      {{ submitting ? 'Submitting...' : 'Submit Payment' }}
-    </ion-button>
+      <ion-select
+        label="Currency"
+        label-placement="stacked"
+        fill="outline"
+        formControlName="currency"
+        interface="popover"
+        placeholder="Select currency">
+        <ion-select-option value="UGX">Ugandan Shilling</ion-select-option>
+        <ion-select-option value="USD">US Dollar</ion-select-option>
+        <ion-select-option value="GBP">British Pound</ion-select-option>
+      </ion-select>
 
-    <div class="message" *ngIf="resultMessage">
-      {{ resultMessage }}
-    </div>
+      <ion-input
+        label="Reference"
+        mode="md"
+        label-placement="stacked"
+        fill="outline"
+        type="text"
+        placeholder="Enter your reference"
+        formControlName="payerReference"></ion-input>
+
+      <ion-button expand="block" color="primary" type="submit" [disabled]="submitting || paymentForm.invalid">
+        {{ submitting ? 'Submitting...' : 'Submit Payment' }}
+      </ion-button>
+
+      <ion-text class="link-text" (click)="goToStatusPage()">
+        <p>Check Payment Status</p>
+      </ion-text>
+
+      <div class="message" *ngIf="resultMessage">
+        {{ resultMessage }}
+      </div>
   </form>
 </ion-content>

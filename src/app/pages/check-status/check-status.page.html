@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>CheckStatus</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="logo">
+    <img src="./assets/dfcu-logo.png" class="logo"/>
+  </div>
+
+  <form [formGroup]="checkStatusForm" (ngSubmit)="submitForm()">
+    <ion-input
+      label="Transaction Refference"
+      mode="md"
+      label-placement="stacked"
+      fill="outline"
+      type="text"
+      placeholder="Enter your transaction refference"
+      formControlName="transactionId"></ion-input>
+
+    <ion-button expand="block" color="primary" type="submit" [disabled]="submitting || checkStatusForm.invalid">
+      {{ submitting ? 'Submitting...' : 'Submit Payment' }}
+    </ion-button>
+  </form>
+</ion-content>
