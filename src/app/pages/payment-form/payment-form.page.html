@@ -6,20 +6,52 @@
 
 <ion-content [fullscreen]="true">
   <form [formGroup]="paymentForm" (ngSubmit)="submitForm()">
-    <ion-item>
-      <ion-label></ion-label>
-      <ion-input formControlName="accountNumber"></ion-input>
-    </ion-item>
+      <ion-input
+        label="Account to Debit"
+        mode="md"
+        label-placement="stacked"
+        fill="outline"
+        type="text"
+        placeholder="Enter your account number"
+        formControlName="payer"></ion-input>
 
-    <ion-item>
-      <ion-label position="floating">Amount</ion-label>
-      <ion-input type="number" formControlName="amount"></ion-input>
-    </ion-item>
+      <ion-input
+        label="Merchant Account"
+        mode="md"
+        label-placement="stacked"
+        fill="outline"
+        type="text"
+        placeholder="Enter merchant account number"
+        formControlName="payee"></ion-input>
 
-    <ion-item>
-      <ion-label position="floating">Reference</ion-label>
-      <ion-input formControlName="reference"></ion-input>
-    </ion-item>
+      <ion-input
+        label="Amount"
+        mode="md"
+        label-placement="stacked"
+        fill="outline"
+        placeholder="Enter your amount"
+        type="number" formControlName="amount"></ion-input>
+
+      <ion-select
+        label="Currency"
+        label-placement="stacked"
+        fill="outline"
+        formControlName="currency"
+        interface="popover"
+        placeholder="Select currency">
+        <ion-select-option value="UGX">Ugandan Shilling</ion-select-option>
+        <ion-select-option value="USD">US Dollar</ion-select-option>
+        <ion-select-option value="GBP">British Pound</ion-select-option>
+      </ion-select>
+
+      <ion-input
+        label="Reference"
+        mode="md"
+        label-placement="stacked"
+        fill="outline"
+        type="text"
+        placeholder="Enter your reference"
+        formControlName="payerReference"></ion-input>
 
     <ion-button expand="block" color="primary" type="submit" [disabled]="submitting || paymentForm.invalid">
       {{ submitting ? 'Submitting...' : 'Submit Payment' }}

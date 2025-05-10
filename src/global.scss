@@ -35,3 +35,30 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+ion-alert.dfcu-alert {
+  --background: var(--dfcu-white);
+  --header-color: var(--dfcu-blue);
+  --message-color: #333;
+  --button-color: var(--dfcu-light-blue);
+  --button-font-weight: 500;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+ion-alert.dfcu-alert .alert-head {
+  color: var(--dfcu-blue);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+ion-alert.dfcu-alert .alert-message {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+ion-alert.dfcu-alert .alert-button {
+  color: var(--dfcu-blue);
+  font-weight: 600;
+  font-size: 0.95rem;
+}

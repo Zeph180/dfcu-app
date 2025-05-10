@@ -10,10 +10,10 @@ export class PaymentService {
   constructor(private http: HttpClient) { }
 
   postData(payload: any, endpoint: string): Observable<any> {
-    return this.http.post(`${this.baseUrl}/${endpoint}/`, payload, {});
+    return this.http.post(`${this.baseUrl}${endpoint}/`, payload);
   }
 
   getData(endpoint: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${endpoint}`, {});
+    return this.http.get(`${this.baseUrl}${endpoint}`, {});
   }
 }
