@@ -1,2 +1,17 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+:root {
+  --dfcu-blue: #003a70;
+  --dfcu-light-blue: #005baa;
+  --dfcu-white: #ffffff;
+  --dfcu-background: #f4f6f8;
+  --dfcu-gray: #e5e5e5;
+}
+
+$colors: (
+  primary: var(--dfcu-blue),
+  secondary: var(--dfcu-light-blue),
+  light: var(--dfcu-white),
+  medium: var(--dfcu-gray),
+  dark: #1a1a1a
+);
