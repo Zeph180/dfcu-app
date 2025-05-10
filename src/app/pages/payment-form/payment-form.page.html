@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>payment-form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="paymentForm" (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label></ion-label>
+      <ion-input formControlName="accountNumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Amount</ion-label>
+      <ion-input type="number" formControlName="amount"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Reference</ion-label>
+      <ion-input formControlName="reference"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" color="primary" type="submit" [disabled]="submitting || paymentForm.invalid">
+      {{ submitting ? 'Submitting...' : 'Submit Payment' }}
+    </ion-button>
+
+    <div class="message" *ngIf="resultMessage">
+      {{ resultMessage }}
+    </div>
+  </form>
+</ion-content>
