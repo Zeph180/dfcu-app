@@ -35,3 +35,26 @@ npm install
 
 # Start development server
 ionic serve
+
+Android
+ionic capacitor add android
+ionic capacitor run android
+
+iOS
+ionic capacitor add ios
+ionic capacitor run ios
+```
+
+## 📱 Run on Mobile Devices
+```bash
+# Add Android platform
+ionic capacitor add android
+ionic capacitor build
+npx cap sync
+ionic capacitor run android
+
+# Add Android platform
+ionic capacitor add ios
+ionic capacitor build
+npx cap sync
+ionic capacitor run android
