@@ -58,3 +58,10 @@ ionic capacitor add ios
 ionic capacitor build
 npx cap sync
 ionic capacitor run android
+```
+## 📱 Screenhots
+![Desktop Payment Screen](screenshots/Screenshot 2025-05-10 at 17.55.59.png)
+![Desktop Payment Screen](screenshots/Screenshot 2025-05-10 at 17.56.34.png)
+![Desktop Payment Screen](screenshots/androidPayment.png)
+![Desktop Payment Screen](screenshots/androd.png)
+![Desktop Payment Screen](screenshots/Screenshot_20250510_180000.png)
